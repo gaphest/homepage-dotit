@@ -21,7 +21,7 @@ Grunt LESS Template - шаблон для быстрого старта рабо
 ```sh
 $ mkdir dirname
 $ cd dirname
-$ git clone https://github.com/bogdosarov/grunt_less_template .
+$ git clone git@github.com:stfalcon-studio/grunt-boilerplate.git .
 $ npm install
 $ grunt
 ```
