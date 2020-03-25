@@ -1,0 +1,219 @@
+@use-flex: true; // Use flexbox [true|false]
+@responsive: true; // Theme is responsive [true|false]
+
+@screen__xxs: 320px;
+@screen__xms: 415px;
+@screen__xs: 480px;
+@screen__s: 640px;
+@screen__m: 768px;
+@screen__ml: 1024px;
+@screen__l: 1280px;
+@screen__xl: 1440px;
+@screen__xxl: 1680px;
+@screen__max: 1920px;
+
+//
+//  Responsive
+//  _____________________________________________
+
+//
+//  Media variables, that can be used for splitting styles into several files
+//  ---------------------------------------------
+
+@media-common: true; // Sets whether to output common styles (true|false)
+@media-target: 'all'; // Sets target device for styles output (all|desktop|mobile)
+
+//
+//  Media width mixin used to group styles output based on media queries
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+}
+.media-width(@extremum, @break){}
+.media-width(@extremum, @break_left, @break_right){}
+
+//
+//  Style groups for 'mobile' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+
+    //[ @screen__xs , MAX )
+    @media all and (min-width: @screen__xs),
+    print {
+        .media-width('min', @screen__xs);
+    }
+
+    //[ 0 , @screen__xms )
+    @media all and (min-width: (@screen__xms - 1)) {
+        .media-width('min', @screen__xms);
+    }
+
+    //[ 0 , @screen__xms )
+    @media all and (max-width: (@screen__xms - 1)) {
+        .media-width('max', @screen__xms);
+    }
+
+    //[ 0 , @screen__xs )
+    @media all and (max-width: (@screen__xs - 1)) {
+        .media-width('max', @screen__xs);
+    }
+
+    //[ @screen__s , MAX )
+    @media all and (min-width: @screen__s),
+    print {
+        .media-width('min', @screen__s);
+    }
+
+    //[ 0 , @screen__s )
+    @media all and (max-width: (@screen__s - 1)) {
+        .media-width('max', @screen__s);
+    }
+
+    //[ 0 , @screen__m )
+    @media all and (max-width: (@screen__m - 1)) {
+        .media-width('max', @screen__m);
+    }
+
+    //[ 0 , @screen__l )
+    @media all and (max-width: (@screen__l - 1)) {
+        .media-width('max', @screen__l);
+    }
+
+    //[ 0 , @@screen__xl )
+    @media all and (max-width: (@screen__xl - 1)) {
+        .media-width('max', @screen__xl);
+    }
+
+    //[ 0 , @@screen__xxl )
+    @media all and (max-width: (@screen__xxl - 1)) {
+        .media-width('max', @screen__xxl);
+    }
+
+    //[ 0 , @screen__ml )
+    @media all and (max-width: (@screen__ml - 1)) {
+        .media-width('max', @screen__ml);
+    }
+
+    //
+    //  Intervals
+    //  ---------------------------------------------
+
+    //[ @screen__s , @screen__l )
+    @media all and (min-width: @screen__s) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width('between', @screen__s, @screen__l);
+    }
+
+    //[ @screen__xms , @screen__l )
+    @media all and (min-width: @screen__xms) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width('between', @screen__xms, @screen__l);
+    }
+
+    //[ @screen__xms , @screen__m )
+    @media all and (min-width: @screen__xms) and (max-width: (@screen__m - 1)),
+    print {
+        .media-width('between', @screen__xms, @screen__m);
+    }
+}
+
+//
+//  Style groups for 'desktop' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media all and (min-width: @screen__m),
+    print {
+        .media-width('min', @screen__m);
+    }
+
+    @media all and (min-width: @screen__ml),
+    print {
+        .media-width('min', @screen__ml);
+    }
+
+    @media all and (min-width: @screen__l),
+    print {
+        .media-width('min', @screen__l);
+    }
+
+    @media all and (min-width: @screen__xl),
+    print {
+        .media-width('min', @screen__xl);
+    }
+
+    @media all and (min-width: @screen__xxl),
+    print {
+        .media-width('min', @screen__xxl);
+    }
+
+    @media all and (min-width: @screen__max),
+    print {
+        .media-width('min', @screen__max);
+    }
+
+    //
+    //  Intervals
+    //  ---------------------------------------------
+
+    //[ @screen__xms , @screen__l )
+    @media all and (min-width: @screen__xms) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width('between', @screen__xms, @screen__l);
+    }
+
+    //[ @screen__xs , @screen__s )
+    @media all and (min-width: @screen__xs) and (max-width: (@screen__s - 1)),
+    print {
+        .media-width('between', @screen__xs, @screen__s);
+    }
+
+    //[ @screen__s , @screen__l )
+    @media all and (min-width: @screen__s) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width('between', @screen__s, @screen__l);
+    }
+
+    //[ @screen__m , @screen__ml )
+    @media all and (min-width: @screen__m) and (max-width: (@screen__ml - 1)),
+    print {
+        .media-width('between', @screen__m, @screen__ml);
+    }
+
+    //[ @screen__m , @screen__l )
+    @media all and (min-width: @screen__m) and (max-width: (@screen__l - 1)),
+    print {
+        .media-width('between', @screen__m, @screen__l);
+    }
+
+    //[ @screen__m , @screen__xl )
+    @media all and (min-width: @screen__m) and (max-width: (@screen__xl - 1)),
+    print {
+        .media-width('between', @screen__m, @screen__xl);
+    }
+
+    //[ @screen__l , @screen__xl )
+    @media all and (min-width: @screen__l) and (max-width: (@screen__xl - 1)),
+    print {
+        .media-width('between', @screen__l, @screen__xl);
+    }
+
+    //[ @screen__l , @screen__max )
+    @media all and (min-width: @screen__l) and (max-width: (@screen__max - 1)),
+    print {
+        .media-width('between', @screen__l, @screen__max);
+    }
+
+    //[ @screen__xl , @screen__max )
+    @media all and (min-width: @screen__xl) and (max-width: (@screen__max - 1)),
+    print {
+        .media-width('between', @screen__xl, @screen__max);
+    }
+
+    //[ @screen__xl , @screen__max )
+    @media all and (min-width: @screen__xxl) and (max-width: (@screen__max - 1)),
+    print {
+        .media-width('between', @screen__xxl, @screen__max);
+    }
+}

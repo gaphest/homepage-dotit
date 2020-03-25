@@ -1,0 +1,128 @@
+.custom-wrapper {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1170px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+}
+
+.home-block {
+  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25;
+
+  img{
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.home-block {
+  text-align: center;
+  padding: 50px 0;
+
+  h3 {
+    font-size: 47px;
+    margin-bottom: 60px;
+    font-weight: 400;
+    font-family: @font-family__sans-serif__secondary;
+    position: relative;
+
+    &._regular {
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+
+    &:not(._regular) {
+      &:before,
+      &:after {
+        content: '';
+        width: 60px;
+        height: 5px;
+        position: absolute;
+        background-color: #e7e8e8;
+        top: 50%;
+      }
+
+      &:before {
+        transform: translate(-90px, -50%);
+      }
+
+      &:after {
+        transform: translate(30px, -50%);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .custom-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .home-block {
+    padding: 35px 0;
+
+    h3{
+      font-size: 32px;
+      margin-bottom: 25px;
+
+      &._regular {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      &:not(._regular) {
+        &:before,
+        &:after {
+          width: 43px;
+          height: 3px;
+        }
+
+        &:before {
+          transform: translate(-63px, -50%);
+        }
+
+        &:after {
+          transform: translate(20px, -50%);
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px){
+  .home-block {
+    padding: 30px 0;
+
+    h3{
+      font-size: 24px;
+      line-height: 36px;
+
+      &._regular {
+        font-size: 18px;
+      }
+
+      &:not(._regular) {
+        &:before,
+        &:after {
+          width: 30px;
+          height: 2px;
+        }
+
+        &:before {
+          transform: translate(-42px, -50%);
+        }
+
+        &:after {
+          transform: translate(10px, -50%);
+        }
+      }
+    }
+  }
+}

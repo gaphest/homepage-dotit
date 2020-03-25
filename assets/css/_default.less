@@ -1,0 +1,66 @@
+input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"] {
+  background: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c2c2c2;
+  border-radius: 1px;
+  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 32px;
+  line-height: 1.428571429;
+  padding: 0 9px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  background: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c2c2c2;
+  border-radius: 1px;
+  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: auto;
+  line-height: 1.428571429;
+  margin: 0;
+  padding: 10px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.custom-btn {
+  background-image: none;
+  background: #17468f;
+  border: 1px solid #17468f;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding: 11px 25px;
+  font-size: 18px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+@media all and (max-width: 768px) {
+  .custom-btn {
+    padding: 6px 0;
+    min-width: 124px !important;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 416px) {
+  .custom-btn {
+    padding: 3px 0;
+    min-width: 85px !important;
+  }
+}
+
+.custom-btn._wide {
+  min-width: 190px;
+}

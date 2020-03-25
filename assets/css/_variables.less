@@ -1,0 +1,37 @@
+@font-family__sans-serif__secondary: @font-family-name__secondary, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-name__secondary: 'Myriad Pro';
+
+@font-family__cond__secondary: @font-family-name__cond-secondary, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-name__cond-secondary: 'Myriad Pro Cond';
+
+@typography-color: @color-8;
+
+@color-1: #17468f;
+@color-2: #ecebeb;
+@color-3: #232323;
+@color-4: #beddec;
+@color-5: #232323;
+@color-6: #a9a9a9;
+@color-7: #7f7f7f;
+@color-8: #3c3c3c;
+
+@media-common: true;
+@media-target: 'all'; // Sets target device for styles output (all|desktop|mobile)
+
+
+.lib-font-face(
+  @family-name,
+  @font-path,
+  @font-format: false,
+  @font-weight: normal,
+  @font-style: normal,
+  @font-display: auto
+) when (@font-format = false) {
+  @font-face {
+    font-family: @family-name;
+    src: url('@{font-path}.woff') format('woff');
+    font-weight: @font-weight;
+    font-style: @font-style;
+    font-display: @font-display;
+  }
+}

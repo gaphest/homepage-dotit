@@ -1,0 +1,218 @@
+
+.schedule-demo {
+  background-image: url('../assets/images/Dark_bg.jpg');
+  background-size: cover;
+  padding: 35px 0;
+
+  &__subtitle-wrapper {
+    text-align: left;
+  }
+
+  &__subtitle {
+    color: #fff;
+    font-size: 34px;
+    padding-bottom: 20px;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: 20px;
+
+    &::after {
+      content: '';
+      border-bottom: 1px solid #fff;
+      width: 90%;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+}
+
+.schedule-form {
+  input,
+  textarea {
+    font-size: 20px;
+
+    &::placeholder {
+      color: #000;
+      font-size: 20px;
+    }
+  }
+
+  &__fieldset {
+    display: flex;
+    justify-content: space-between;
+
+
+    > .field {
+      width: 48%;
+
+      label {
+        flex-basis: 70px;
+        text-align: left;
+      }
+
+      &.company,
+      &.phone {
+        label {
+          flex-basis: 115px;
+        }
+      }
+
+      input {
+        height: 38px;
+          max-width: 75%;
+      }
+    }
+
+    .control {
+      display: flex;
+      align-items: center;
+
+    }
+
+    label {
+      font-size: 20px;
+      color: #fff;
+      margin-right: 10px;
+    }
+  }
+
+  &__fieldset + &__fieldset {
+    margin-top: 25px;
+  }
+
+  &__comment {
+    text-align: left;
+    margin-top: 15px;
+
+    label {
+      font-size: 31px;
+      color: #fff;
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__filename {
+    vertical-align: middle;
+    font-size: 20px;
+    color: #fff;
+    margin: 0 10px;
+  }
+
+  &__attach-label {
+
+    background-image: none;
+    background: #7f7f7f;
+    border: 1px solid #7f7f7f;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 11px 25px;
+    font-size: 18px;
+    line-height: 16px;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+  .actions {
+    margin-top: 25px;
+  }
+}
+
+@media all and (min-width: 1280px) {
+    .schedule-form__fieldset{
+        max-width: 95%;
+    }
+}
+
+@media all and (max-width: 768px) {
+  .schedule-form__filename{
+    font-size: 16px;
+  }
+
+  .schedule-demo {
+    .custom-wrapper._small {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    &__subtitle {
+      padding-bottom: 10px;
+    }
+  }
+
+  .schedule-form{
+    &__fieldset label{
+      font-size: 14px;
+      margin-right: 0;
+    }
+
+    &__fieldset > .field input{
+      height: 24px;
+    }
+
+    &__comment label{
+      font-size: 18px;
+    }
+
+    textarea {
+      height: 75px;
+    }
+
+    .actions {
+      margin-top: 15px;
+    }
+
+    &__attach-label{
+      padding: 6px 0;
+      min-width: 124px;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  .schedule-form__fieldset + .schedule-form__fieldset{
+    margin-top: 15px;
+  }
+}
+
+@media all and (max-width: 480px) {
+
+
+  .schedule-form__fieldset .control{
+    flex-direction: column;
+  }
+
+  .schedule-form__fieldset > .field.company label,
+  .schedule-form__fieldset > .field.phone label,
+  .schedule-form__fieldset > .field label{
+    flex-basis: auto;
+  }
+
+  .schedule-form__fieldset > .field input{
+    max-width: none;
+  }
+
+  .schedule-form__fieldset .control{
+    align-items: flex-start;
+
+    label {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+@media all and (max-width: 416px) {
+  .schedule-form {
+    &__attach-label {
+      padding: 3px 0;
+      min-width: 85px;
+    }
+  }
+}

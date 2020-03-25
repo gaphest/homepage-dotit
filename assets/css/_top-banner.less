@@ -1,0 +1,165 @@
+
+.top-banner {
+  padding: 0;
+  &__top {
+    line-height: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__bottomwrapper {
+    background-color: #232323;
+  }
+
+  &__bottom {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    p {
+      color: #ffffff;
+      font-size: 36px;
+      margin-bottom: 0;
+      text-align: left;
+
+        &:last-child{
+            line-height: 1;
+        }
+    }
+
+    a {
+      color: #df1818;
+      text-decoration: underline;
+      font-size: 29px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__youtube-btn {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+
+    > img {
+      width: 98px;
+      height: 98px;
+    }
+  }
+
+  &__text,
+  &__youtube-btn {
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    font-size: 32px;
+    color: #fff;
+  }
+
+
+}
+
+@media all and (min-width: 1280px) {
+    .top-banner{
+        &__video {
+            transition: all 0.5s ease-out;
+
+            &._big {
+                height: 267px;
+                width: 475px;
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 1280px) {
+    .top-banner {
+        &__text{
+            max-width: 28%;
+        }
+
+      &__text {
+        p {
+          font-size: 30px;
+        }
+
+        a {
+          font-size: 25px;
+        }
+      }
+
+      &__youtube-btn > img{
+        max-width: 66px !important;
+        max-height: 66px !important;
+      }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .top-banner {
+        &__video {
+            max-width: 252px;
+            max-height: 141px;
+        }
+
+        &__text{
+            p{
+                font-size: 24px;
+            }
+
+            a{
+                font-size: 19px;
+            }
+        }
+
+        &__text,
+        &__youtube-btn {
+            margin-bottom: 15px;
+        }
+
+        &__youtube-btn > img{
+            max-width: 66px !important;
+            max-height: 66px !important;
+        }
+    }
+}
+
+@media all and (max-width: 500px){
+    .top-banner {
+        &__video {
+            max-width: 137px;
+            max-height: 75px;
+        }
+
+        &__text{
+            line-height: 16.28px;
+            margin-top: 10px;
+
+            p{
+                font-size: 13px;
+            }
+
+            a{
+                font-size: 11px;
+            }
+        }
+
+        &__youtube-btn > img{
+            max-width: 36px !important;
+            max-height: 36px !important;
+        }
+    }
+}
+
+
+

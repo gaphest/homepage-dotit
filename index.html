@@ -1,12 +1,409 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Template</title>
-    <link rel="stylesheet" href="dist/style.min.css"/>
+    <link rel="stylesheet" href="dist/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <script src="dist/main.min.js"></script>
-    <script src="//localhost:8585/livereload.js"></script>
+
+<div class="home-block top-banner">
+    <div class="top-banner__top">
+        ​<picture>
+            <source srcset="assets/images/mobile/Dark_bg_mobile.jpg" media="(max-width: 480px)">
+            <source srcset="assets/images/tablet/Dark_bg_tablet.jpg" media="(max-width: 1280px)">
+            <img src="assets/images/m1-home/adapt.jpg" alt="Single Source Partner">
+        </picture>
+    </div>
+
+    <div class="top-banner__bottomwrapper">
+        <div class="custom-wrapper _small">
+            <div class="top-banner__bottom">
+                <div class="top-banner__text">
+                    <p>Protect your food.</p>
+                    <p>Protect your customers.</p>
+                    <p>
+                        <a href="https://www.youtube.com/watch?time_continue=3&v=g3yLnwK-n_4">watch to learn how</a>
+                    </p>
+                </div>
+
+                <button class="top-banner__youtube-btn">
+                    <img alt="play" src="assets/images/m1-home/play.png" id="play-btn">
+
+                    <img alt="play" src="assets/images/m1-home/SVG/pause.svg" id="pause-btn" class="_undisplayed">
+                </button>
+
+                <div id="youtube-video" class="top-banner__video"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-video', {
+            height: '211',
+            width: '374',
+            videoId: 'g3yLnwK-n_4',
+            events: {
+                'onStateChange': onPlayerStateChange
+            },
+        });
+    }
+
+    var playBtn = document.getElementById('play-btn');
+    var pauseBtn = document.getElementById('pause-btn');
+
+    playBtn.addEventListener('click', function () {
+        player.playVideo();
+
+        var youtubeVideo = document.getElementById("youtube-video");
+        youtubeVideo.classList.add('_big');
+
+        showPlayBtn();
+    });
+
+    pauseBtn.addEventListener('click', function () {
+        player.pauseVideo();
+
+        var youtubeVideo = document.getElementById("youtube-video");
+        youtubeVideo.classList.remove('_big');
+
+        showPauseBtn();
+    });
+
+    function showPlayBtn(){
+        playBtn.classList.add('_undisplayed');
+        pauseBtn.classList.remove('_undisplayed');
+    }
+
+    function showPauseBtn(){
+        playBtn.classList.remove('_undisplayed');
+        pauseBtn.classList.add('_undisplayed');
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+            showPlayBtn();
+        }
+
+        if (event.data === YT.PlayerState.PAUSED) {
+            showPauseBtn();
+        }
+    }
+</script>
+<div class="home-block design-mind">
+    <h3>Food Safety Essentials <br>
+        for Take-Out &amp; Delivery</h3>
+
+    <div class="custom-wrapper">
+        <ul class="design-mind__list">
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/secure-it.jpg" alt="Protect your brand"></a>
+                </div>
+                <p>SecureIt™ Solutions</p>
+            </li>
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/labels.jpg" alt="Streamline your supply chain"></a>
+                </div>
+                <p>Safety &amp; Rotation Labels</p>
+            </li>
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/supplies.jpg" alt="Make rollouts easier"></a>
+                </div>
+                <p>Food Safety Supplies</p>
+            </li>
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/first-aid.jpg" alt="Eliminate distribution headaches"></a>
+                </div>
+                <p>First Aid Solutions</p>
+            </li>
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/AFS.jpg" alt="Open new stores faster"></a>
+                </div>
+                <p>Food Safety Training</p>
+            </li>
+            <li class="feature-item">
+                <div class="feature-item__icon">
+                    <a href="#"><img src="assets/images/m1-home/planglow.jpg" alt="Reduce costs"></a>
+                </div>
+                <p>Disposables</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="home-block prints-place">
+    <div class="prints-place__top">
+        <div class="custom-wrapper">
+            <h3>Delivery Print Solutions</h3>
+
+            <div class="prints-promo">
+                <div class="prints-promo__left">
+                    <h4 class="prints-promo__subtitle">
+                        We got you.
+                    </h4>
+
+                    <p>Find everything your brand needs to promote your delivery program.</p>
+
+                    <a href="#">
+                        <button class="custom-btn">
+                            Start a Project
+                        </button>
+                    </a>
+                </div>
+                <div class="prints-promo__right">
+                    <img src="assets/images/m1-home/delivery-print.jpg" alt="macbook_brands">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-wrapper prints-place__bottom">
+        <ul class="prints-place__list">
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/m1-home/Delivery_Menus.jpg" alt="Menus" class="print-item__img">
+                </a>
+            </li>
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/prints/YAB_packaging_1.jpg" alt="Packaging" class="print-item__img">
+                </a>
+            </li>
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/prints/YAB_banners_1.jpg" alt="Banners" class="print-item__img">
+                </a>
+            </li>
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/prints/YAB_apparel_1.jpg" alt="Apparel" class="print-item__img">
+                </a>
+            </li>
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/prints/YAB_signage_1.jpg" alt="Signage" class="print-item__img">
+                </a>
+            </li>
+            <li class="print-item">
+                <a href="#">
+                    <img src="assets/images/prints/YAB_labels_1.jpg" alt="Labels" class="print-item__img">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="home-block brands-block">
+    <h3>What People are Saying</h3>
+
+    <div class="custom-wrapper">
+        <div class="brands-response">
+            <div class="brands-response__author">
+                <div class="brands-response__img">
+                    <img src="assets/images/m1-home/abby.jpg" alt="Author">
+                </div>
+            </div>
+            <p class="brands-response__quote">Abby's Legendary Pizza uses Dot It's, SecureIt labels to ensure our carry-out and delivery orders remain fresh and secure for our customers, and they love it! I would recommend SecureIt labels to any restaurant during this time of 3rd party delivery, like UberEats and DoorDash.</p>
+
+            <p class="brands-response__name">
+                Doug Phillips
+            </p>
+            <p class="brands-response__position">
+                VP of Marketing, Abby’s Legendary Pizza
+            </p>
+        </div>
+
+        <div class="brands-block__wrapper">
+            <h3>Trusted by top brands</h3>
+
+            <img src="assets/images/m1-home/brand_logos.jpg" alt="Brand logos" class="brands-block__img">
+        </div>
+    </div>
+</div>
+
+<div class="home-block schedule-demo">
+    <div class="custom-wrapper _small">
+        <div class="schedule-demo__subtitle-wrapper">
+            <h3 class="schedule-demo__subtitle _regular">
+                Request More Information
+            </h3>
+        </div>
+
+        <form class="form schedule-form" novalidate="novalidate" action="" method="post" id="newsletter-validate-detail">
+
+            <div class="schedule-form__fieldset">
+                <div class="field name required">
+                    <div class="control">
+                        <label for="name">Name</label>
+
+                        <input name="name" type="text" id="name" data-validate="{required:true, 'validate-alpha':true}" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="field company required">
+                    <div class="control">
+                        <label for="company">Company</label>
+                        <input name="company" type="text" id="company" data-validate="{required:true}" aria-required="true">
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-form__fieldset">
+                <div class="field email required">
+                    <div class="control">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" id="email" data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                    </div>
+                </div>
+                <div class="field phone required">
+                    <div class="control">
+                        <label for="phone">Phone</label>
+                        <input name="phone" type="tel" id="phone" data-validate="{required:true, 'validate-phoneStrict':true}" aria-required="true">
+                    </div>
+                </div>
+            </div>
+
+            <div class="field schedule-form__comment">
+                <label for="comment" class="label">Tell us more.</label>
+                <div class="control">
+                    <textarea name="comment" rows="5" class="textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="actions _tar">
+                <label class="schedule-form__attach-label" for="schedule-file">Attach a file</label>
+                <input type="file" id="schedule-file" name="schedule-file" style="display: none">
+
+                <span class="schedule-form__filename" id="img_text"></span>
+
+                <button class="custom-btn _wide" title="Submit" type="submit" aria-label="Schedule">
+                    <span>Submit</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#schedule-file').addEventListener('change', function () {
+        var filename = document.querySelector('#schedule-file').value.replace(/^.*[\\\/]/, '');
+        document.querySelector("#img_text").innerHTML = filename;
+    });
+</script>
+
+<footer class="dot-footer"><div class="footer content"><div class="footer-main">
+    <a class="footer-logo" href="http://localhost/dotit/" title="" aria-label="store logo">
+        <img src="assets/images/footer_logo.png" title="" alt="">
+    </a>
+
+    <h2 class="footer-subtitle">A Single-Source Brand Partner</h2>
+
+    <div class="footer-nav">
+        <li class="level0 nav-1 category-item first last level-top">
+            <a href="#" class="level-top"><span>Testeeee</span></a></li>
+        <li class="level0 nav-1 category-item first last level-top"><a href="#"
+                                                                       class="level-top"><span>Testeeee</span></a></li>
+        <li class="level0 nav-1 category-item first last level-top"><a href="#"
+                                                                       class="level-top"><span>Testeeee</span></a></li>
+        <li class="level0 nav-1 category-item first last level-top"><a href="#"
+                                                                       class="level-top"><span>Testeeee</span></a></li>
+        <li class="level0 nav-1 category-item first last level-top"><a href="#"
+                                                                       class="level-top"><span>Testeeee</span></a></li>
+    </div>
+    <div class="footer-contacts">
+        <div class="footer-contacts__item">
+            <a href="https://www.facebook.com/Dot-It-Restaurant-Fulfillment-128877457136832/">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>facebook</title>
+                    <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-contacts__item">
+            <a href="https://twitter.com/DotItNation">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>linkedin2</title>
+                    <path d="M12 12h5.535v2.837h0.079c0.77-1.381 2.655-2.837 5.464-2.837 5.842 0 6.922 3.637 6.922 8.367v9.633h-5.769v-8.54c0-2.037-0.042-4.657-3.001-4.657-3.005 0-3.463 2.218-3.463 4.509v8.688h-5.767v-18z"></path>
+                    <path d="M2 12h6v18h-6v-18z"></path>
+                    <path d="M8 7c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-contacts__item">
+            <a href="https://www.linkedin.com/company/dot-it-restaurant-fulfillment/">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>twitter</title>
+                    <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-contacts__item">
+            <a href="https://www.youtube.com/channel/UCJR8SCuX2C5amgmuLriVY_A">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>youtube</title>
+                    <path d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-contacts__item">
+            <a href="https://www.pinterest.com/dotitnation/">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>pinterest2</title>
+                    <path d="M16 0c-8.825 0-16 7.175-16 16s7.175 16 16 16 16-7.175 16-16-7.175-16-16-16zM16 29.863c-1.431 0-2.806-0.219-4.106-0.619 0.563-0.919 1.412-2.431 1.725-3.631 0.169-0.65 0.863-3.294 0.863-3.294 0.45 0.863 1.775 1.594 3.175 1.594 4.181 0 7.194-3.844 7.194-8.625 0-4.581-3.738-8.006-8.544-8.006-5.981 0-9.156 4.019-9.156 8.387 0 2.031 1.081 4.563 2.813 5.369 0.262 0.125 0.4 0.069 0.463-0.188 0.044-0.194 0.281-1.131 0.387-1.575 0.031-0.137 0.019-0.262-0.094-0.4-0.575-0.694-1.031-1.975-1.031-3.162 0-3.056 2.313-6.019 6.256-6.019 3.406 0 5.788 2.319 5.788 5.637 0 3.75-1.894 6.35-4.356 6.35-1.363 0-2.381-1.125-2.050-2.506 0.394-1.65 1.15-3.425 1.15-4.613 0-1.063-0.569-1.95-1.756-1.95-1.394 0-2.506 1.438-2.506 3.369 0 1.225 0.412 2.056 0.412 2.056s-1.375 5.806-1.625 6.887c-0.281 1.2-0.169 2.881-0.050 3.975-5.156-2.012-8.813-7.025-8.813-12.9 0-7.656 6.206-13.863 13.862-13.863s13.863 6.206 13.863 13.863c0 7.656-6.206 13.863-13.863 13.863z"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-contacts__item">
+            <a href="https://www.instagram.com/dotitnation/">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>instagram</title>
+                    <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+                    <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+                    <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div><div class="footer-middle"><div class="block newsletter">
+    <div class="content">
+        <form class="form subscribe" novalidate="novalidate" action="http://localhost/dotit/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="newsletter">
+                        <span class="label">
+                            Join Our Newsletter!                        </span>
+
+                    </label>
+                    <div>
+                        <input name="email" type="email" id="newsletter" placeholder="Email" data-validate="{required:true, 'validate-email':true}">
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="custom-btn" title="Join" type="submit" aria-label="Subscribe">
+                    <span>Join</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div></div></footer>
+
+
 </body>
 </html>
