@@ -548,7 +548,6 @@ textarea {
   }
   .prints-promo__subtitle {
     font-size: 37px;
-    line-height: 50px;
     margin-bottom: 20px;
   }
   .prints-promo__list {
@@ -871,6 +870,10 @@ textarea {
   .schedule-form__filename {
     font-size: 16px;
   }
+  .schedule-form input,
+  .schedule-form textarea {
+    font-size: 15px;
+  }
   .schedule-demo .custom-wrapper._small {
     max-width: 500px;
     margin: auto;
@@ -905,6 +908,10 @@ textarea {
   }
 }
 @media all and (max-width: 480px) {
+  .schedule-form input,
+  .schedule-form textarea {
+    font-size: 12px;
+  }
   .schedule-form__fieldset .control {
     -ms-flex-direction: column;
         flex-direction: column;
@@ -1087,6 +1094,9 @@ textarea {
   padding: 7px;
   cursor: pointer;
 }
+.dot-footer .footer-contacts__item a {
+  vertical-align: middle;
+}
 .dot-footer .footer-contacts__item:hover svg {
   fill: #515d8f;
 }
@@ -1103,6 +1113,8 @@ textarea {
   -ms-flex-pack: center;
       justify-content: center;
   margin: 20px 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 .dot-footer .footer-nav a {
   font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
