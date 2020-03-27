@@ -4,6 +4,13 @@
   background-size: cover;
   padding: 35px 0;
 
+  .success-message{
+    color:#fff;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
   &__subtitle-wrapper {
     text-align: left;
   }
@@ -62,14 +69,21 @@
 
       input {
         height: 38px;
-          max-width: 75%;
+          //max-width: 75%;
+      }
+
+      label{
+        line-height: 38px;
       }
     }
 
     .control {
       display: flex;
-      align-items: center;
+      //align-items: center;
 
+      >div{
+        width: 100%;
+      }
     }
 
     label {
@@ -100,6 +114,7 @@
     font-size: 20px;
     color: #fff;
     margin: 0 10px;
+    word-break: break-all;
   }
 
   &__attach-label {
@@ -122,12 +137,15 @@
 
   .actions {
     margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 
 @media all and (min-width: 1280px) {
     .schedule-form__fieldset{
-        max-width: 95%;
+        max-width: 90%;
     }
 }
 
@@ -161,6 +179,10 @@
       height: 24px;
     }
 
+    &__fieldset > .field label{
+      line-height: 24px;
+    }
+
     &__comment label{
       font-size: 18px;
     }
@@ -187,12 +209,21 @@
 }
 
 @media all and (max-width: 480px) {
+  .schedule-form__fieldset > .field label{
+    line-height: 1.4;
+    font-size: 12px;
+  }
+
   .schedule-form input, .schedule-form textarea{
     font-size: 12px;
   }
 
   .schedule-form__fieldset .control{
     flex-direction: column;
+  }
+
+  .schedule-form__filename{
+    font-size: 12px;
   }
 
   .schedule-form__fieldset > .field.company label,
@@ -222,3 +253,4 @@
     }
   }
 }
+

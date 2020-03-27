@@ -1,33 +1,37 @@
-input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"] {
-  background: #fff;
-  background-clip: padding-box;
-  border: 1px solid #c2c2c2;
-  border-radius: 1px;
-  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  height: 32px;
-  line-height: 1.428571429;
-  padding: 0 9px;
-  vertical-align: baseline;
-  width: 100%;
-  box-sizing: border-box;
-}
+.dot-footer,
+.home-block {
+  input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"] {
+    background: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c2c2c2;
+    border-radius: 1px;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 32px;
+    line-height: 1.428571429;
+    padding: 0 9px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-textarea {
-  background: #fff;
-  background-clip: padding-box;
-  border: 1px solid #c2c2c2;
-  border-radius: 1px;
-  font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  height: auto;
-  line-height: 1.428571429;
-  margin: 0;
-  padding: 10px;
-  vertical-align: baseline;
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical;
+
+  textarea {
+    background: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c2c2c2;
+    border-radius: 1px;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: auto;
+    line-height: 1.428571429;
+    margin: 0;
+    padding: 10px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+  }
 }
 
 .custom-btn {
@@ -63,4 +67,19 @@ textarea {
 
 .custom-btn._wide {
   min-width: 190px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 40px;
+}
+
+@media all and (max-width: 768px) {
+  .custom-btn._wide {
+    height: 30px;
+  }
+}
+
+@media all and (max-width: 416px) {
+  .custom-btn._wide {
+    height: 24px;
+  }
 }

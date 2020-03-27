@@ -20,3 +20,58 @@
 
 @import '_helpers.less';
 
+@import 'slick.less';
+@import 'slick-theme.less';
+
+
+.dot-footer .footer-middle .block.newsletter {
+  background: none;
+  border: none;
+}
+
+.footer-middle .block .actions {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.dot-footer .footer-contacts__item{
+  box-sizing:content-box;
+}
+
+@media all and (min-width: 768px) {
+  .home-block.top-banner{
+    margin-top:-30px;
+  }
+}
+
+.feature-item__icon img,
+.print-item img{
+  transition: all 1s ease;
+}
+
+.feature-item__icon img{
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.print-item img{
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.home-block {
+  .slick-dots li button:before{
+    font-size: 45px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .home-block {
+    .slick-dots li button:before{
+      font-size: 30px;
+    }
+  }
+}

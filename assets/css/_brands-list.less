@@ -38,11 +38,15 @@
 .brands-response {
   max-width: 900px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 70px;
   margin-bottom: 110px;
+  text-align: center;
+
+  .slick-dots{
+    margin-top: 15px;
+    position: static;
+    bottom: auto;
+  }
 
   &__img {
     margin: 0 auto 20px;
@@ -57,11 +61,30 @@
   }
 
   &__quote {
+    text-align: center;
+    margin:auto;
     font-size: 21px;
     max-width: 650px;
     margin-bottom: 35px;
     margin-top: 0;
     line-height: 1.6;
+  }
+
+  &__slider{
+    .slick-prev:before, .slick-next:before{
+      color:black;
+      font-size: 30px;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -71,7 +94,37 @@
     }
 }
 
+@media all and (max-width: 1000px) {
+  .brands-response__slider{
+    .slick-next{
+      right: 35px;
+    }
+
+    .slick-prev{
+      left: 35px;
+    }
+  }
+}
+
+@media all and (max-width: 850px) {
+  .brands-response__slider{
+    .slick-next{
+      right: 10px;
+    }
+
+    .slick-prev{
+      left: 10px;
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
+  .brands-response {
+    .slick-dots {
+      margin-top: 5px;
+    }
+  }
+
     .brands-block {
         &__wrapper{
             img{
@@ -98,7 +151,7 @@
 
         &__name {
             font-size: 19px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         &__position {
@@ -106,6 +159,14 @@
             line-height: 29px;
         }
     }
+}
+
+@media all and (max-width: 600px){
+  .brands-response__slider{
+    .slick-arrow{
+      display: none !important;
+    }
+  }
 }
 
 @media all and (max-width: 480px){
@@ -120,6 +181,7 @@
         &__quote{
             font-size: 12px;
             line-height: 20px;
+            margin-bottom: 20px;
         }
 
         &__name {
